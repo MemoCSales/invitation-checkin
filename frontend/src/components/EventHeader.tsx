@@ -24,19 +24,19 @@ export const EventHeader: React.FunctionComponent<EventHeaderProps> = ({
 	const [ days, hours, minutes, seconds ] = useCountDown(eventDate);
 
 	return (
-		<div className="p-8 background rounded shadow text-center max-w-x1 mx-auto">
-			<h2 className="text-lg text-gray-600 mb-2">{subtitle}</h2>
-			<h1 className="text-3xl font-bold mb-4">{title}</h1>
-			<p className="mb-4 text-gray-500">
+		<div className="p-8 -mt-10 background shadow text-center mx-auto">
+			<h2 className="header-subtitle">{subtitle}</h2>
+			<h1 className="header-title">{title}</h1>
+			<p className="header-details">
 				Evento: { eventDate.toLocaleDateString() } {eventDate.toLocaleTimeString()}
 			</p>
-			<div className="flex justify-center gap-4 mb-6">
+			<div className="header-countdown">
 				<TimeBox label="Dias" value={days} />
 				<TimeBox label="Horas" value={hours}/>
 				<TimeBox label="Minutos" value={minutes}/>
 				<TimeBox label="Segundos" value={seconds} />
 			</div>
-			<button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition" onClick={onButtonClick}>
+			<button className="header-button" onClick={onButtonClick}>
 				{buttonText}
 			</button>
 		</div>
@@ -49,7 +49,7 @@ const TimeBox: React.FunctionComponent<TimeBoxProps> = ({
 	value
 }) => (
 	<div className="flex flex-col items-center">
-		<span className="text-2xl font-mono font-bold">{value.toString().padStart(2,"0")}</span>
-		<span className="text-xs text-gray-500">{label}</span>
+		<span className="text-2xl font-serif font-bold">{value.toString().padStart(2,"0")}</span>
+		<span className="text-medium font-serif text-gray700">{label}</span>
 	</div>
 )
