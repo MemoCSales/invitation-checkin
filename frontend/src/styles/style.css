@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+
 @import "tailwindcss";
+
+@layer base {
+    html {
+        font-family: "Charm", sans-serif;
+    }
+}
 
 @layer components {
 	.background {
-		@apply w-dvw h-dvh bd-cover bg-no-repeat overflow-hidden;
+		@apply w-dvw h-dvh bg-cover bg-no-repeat overflow-hidden;
 		background-image: url(/background.png);
 	}
+
 }
