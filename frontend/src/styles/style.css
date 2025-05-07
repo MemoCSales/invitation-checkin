@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@layer components {
+	.background {
+		@apply w-dvw h-dvh bd-cover bg-no-repeat overflow-hidden;
+		background-image: url(/background.png);
+	}
+}
