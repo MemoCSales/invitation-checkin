@@ -2,6 +2,7 @@ import React from 'react';
 import { EventHeader } from './components/EventHeader'
 import { TopMenu } from 'components/TopMenu';
 import { EventLocations } from "./components/EventLocations";
+import { MapComponent } from "./components/MapComponent";
 
 
 const App = () => {
@@ -16,9 +17,10 @@ const App = () => {
 				buttonText = "RSVP"
 			/>
 			<EventLocations
-				ceremony="PlaceHolder Text"
-				party="PlaceHoder Text for the party"
+				ceremony="13:00 horas"
+				party="15:00 horas"
 			/>
+			<MapComponent />
 		</div>
 	);
 };

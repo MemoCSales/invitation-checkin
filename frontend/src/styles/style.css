@@ -8,6 +8,8 @@
     }
 }
 
+	/* Put this at the end: shadow-lg rounded-lg */
+
 @layer components {
 	
 	.background {
@@ -46,6 +48,46 @@
 		@apply  bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition;
 	}
 	.event-locations {
-		@apply bg-white shadow-lg rounded-lg p-6 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 text-center;
+		@apply bg-white p-6 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 text-center;
+	}
+
+	.divider {
+		@apply w-1/12 mx-auto my-4 border-t-4 border-black
+	}
+
+	.ceremony-icon {
+		@apply mx-auto mb-2;
+		background-image: url(../icons/wedding-rings.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 50px;
+		height: 50px;
+	}
+
+	.party-icon {
+		@apply mx-auto mb-2;
+		background-image: url(../icons/wine-wedding.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 50px;
+		height: 50px;
+	}
+
+	.salon-icon {
+		@apply mx-auto mb-2;
+		background-image: url(../icons/wedding-arch.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 50px;
+		height: 50px;
+	}
+
+	.location-icon {
+		@apply mx-auto mb-2;
+		background-image: url(../icons/location.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 50px;
+		height: 50px;
 	}
 }
