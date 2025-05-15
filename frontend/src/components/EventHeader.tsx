@@ -24,7 +24,7 @@ export const EventHeader: React.FunctionComponent<EventHeaderProps> = ({
 	const [ days, hours, minutes, seconds ] = useCountDown(eventDate);
 
 	return (
-		<div className="p-8 -mt-10 background shadow text-center mx-auto">
+		<div className="p-8 -mt-10 background-color background shadow text-center mx-auto">
 			<h2 className="header-subtitle">{subtitle}</h2>
 			<h1 className="header-title">{title}</h1>
 			<p className="header-details">

@@ -2,4 +2,6 @@
 
 - [ ] Elementos del EventHeader aparezcan difuminados
 - [ x ] Agregar Mapa
-- [ ] Agregar Componente de hotel y donde queadarse
+- [ x ] Agregar Componente de hotel y donde queadarse
+- [ ] Agregar imagenes de hospedaje y actividades
+- [ ] Agregar componente del programa

@@ -11,10 +11,14 @@
 	/* Put this at the end: shadow-lg rounded-lg */
 
 @layer components {
+	.bg-color-container {
+		@apply  w-dvw h-dvh bg-gradient-to-r from-indigo-600 to-purple-600 overflow-hidden;
+	}
 	
 	.background {
         @apply w-dvw h-dvh bg-gradient-to-r from-indigo-600 to-purple-600 overflow-hidden flex flex-col justify-center items-center px-4 py-8;
     }
+	
 
 	.nav-bar {
 		@apply sticky top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 to-purple-600 shadow-md;
@@ -47,13 +51,22 @@
 	.header-button {
 		@apply  bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition;
 	}
-	.event-locations {
+	.grid-event {
 		@apply bg-white p-6 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 text-center;
+	}
+
+	.grid-event-info {
+		@apply bg-white p-6 mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center;
 	}
 
 	.divider {
 		@apply w-1/12 mx-auto my-4 border-t-4 border-black
 	}
+
+	.image-container {
+		@apply p-4 opacity-60;
+	}
+
 
 	.ceremony-icon {
 		@apply mx-auto mb-2;

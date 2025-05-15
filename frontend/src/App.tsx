@@ -3,6 +3,7 @@ import { EventHeader } from './components/EventHeader'
 import { TopMenu } from 'components/TopMenu';
 import { EventLocations } from "./components/EventLocations";
 import { MapComponent } from "./components/MapComponent";
+import { VenueInfoComponent } from 'components/VenueInfoComponent';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
 				party="15:00 horas"
 			/>
 			<MapComponent />
+			<VenueInfoComponent />
 		</div>
 	);
 };
