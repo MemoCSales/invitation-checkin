@@ -4,6 +4,7 @@ import { TopMenu } from 'components/TopMenu';
 import { EventLocations } from "./components/EventLocations";
 import { MapComponent } from "./components/MapComponent";
 import { VenueInfoComponent } from 'components/VenueInfoComponent';
+import { ProgramComponent } from 'components/ProgramComponent';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
 			/>
 			<MapComponent />
 			<VenueInfoComponent />
+			<ProgramComponent />
 		</div>
 	);
 };

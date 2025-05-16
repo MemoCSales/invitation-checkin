@@ -13,7 +13,7 @@ export const VenueInfoComponent = () => {
 			<hr className="divider mt-6 mb-6"/>
 			<div className="grid-event-info">
 				<div>
-					<div className="image-container mx-auto my-4 h-64 w-full mask-[url(/images/accommodation.jpg)] bg-[url(/images/accommodation.jpg)] bg-cover bg-center"></div>
+					<div className="image-container mx-auto my-4 h-64 w-full mask-[url(/images/accommodation_1.jpg)] bg-[url(/images/accommodation_1.jpg)] bg-cover bg-center"></div>
 					<h3 className="text-2xl font-bold mb-2">Viaje</h3>
 					<p className="mb-4">{loremIpsum}</p>
 				</div>
