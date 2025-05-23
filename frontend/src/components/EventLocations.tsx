@@ -10,9 +10,9 @@ export const EventLocations: React.FunctionComponent<EventLocationsProps> = ({
 	party
 }) => {
 	return (
-		<div className="p-4 m-8 bg-white text-center font-serif">
+		<div className="component-container">
 			<div className="header-subtitle text-4xl text-black font-serif font-bold">Día y Lugar</div>
-			<hr className="divider mt-6 mb-6"/>
+			<hr className="divider"/>
 			<div>
 				<div className="salon-icon" aria-label="Location Icon"></div>
 				<h3 className="text-2xl font-bold mb-2 mt-2">Salón Las Ostias</h3>
