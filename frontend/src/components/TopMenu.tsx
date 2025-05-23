@@ -22,13 +22,13 @@ export const TopMenu: React.FunctionComponent = () => {
 					Daniela & Guillermo
 				</div>
 				<button
-				className="text-black md:hidden"
+				className="text-white md:hidden"
 				onClick={() => setIsOpen(!isOpen)}
 				aria-label="Toggle menu"
 				>
 					Menu
 				</button>
-				<ul className={`md:flex md:items-center md:space-x-6 text-black ${isOpen ? 'block' : 'hidden'}`}>
+				<ul className={`md:flex md:items-center md:space-x-6 text-white ${isOpen ? 'block' : 'hidden'}`}>
 					<li><a href="#" className="nav-link">Home</a></li>
 					<li><a href="#" className="nav-link">About</a></li>
 					<li><a href="#" className="nav-link">RSVP</a></li>

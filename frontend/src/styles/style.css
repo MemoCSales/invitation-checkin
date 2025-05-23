@@ -60,11 +60,15 @@
 	}
 
 	.divider {
-		@apply w-1/12 mx-auto my-4 border-t-4 border-black
+		@apply w-1/12 mx-auto my-4 border-t-4 border-black  mt-6 mb-6
 	}
 
 	.image-container {
 		@apply p-4 opacity-60;
+	}
+
+	.component-container {
+		@apply p-6 m-10 bg-white text-center font-serif;
 	}
 
 
