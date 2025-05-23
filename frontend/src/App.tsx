@@ -32,7 +32,6 @@ const App = () => {
 			<VenueInfoComponent />
 			<ProgramComponent />
 			<RSVPComponent 
-				onButtonClick={ () => alert("Click!")}
 				buttonText='Ingresar'/>
 			<QandAComponent />
 			<BackToTop />

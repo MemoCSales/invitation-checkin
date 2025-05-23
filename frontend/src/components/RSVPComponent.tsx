@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { SubtitleComponent } from "./utils/SubtitleComponent";
+import { ConfirmComponent } from "./ConfirmComponent";
 
 interface RSVPComponentProps {
-	onButtonClick: () => void
 	buttonText: string
 }
 
 export const RSVPComponent: React.FunctionComponent<RSVPComponentProps> = ({
-	onButtonClick,
 	buttonText
 }) => {
+
+	const [showComponent, setShowComponent] = useState(false)
 	return (
 		<div className="component-container" id="RSVP">
-			<div className="header-subtitle capitalize text-3xl text-black font-serif font-bold">
-				Confirma tu asistencia
-			</div>
-			<p>Ingresa tu contraseña personal</p>
-			<hr className="divider" />
+			<SubtitleComponent
+				subtitle="Confirma tu asistencia"
+				comment="Ingresa tu contraseña personal"
+			/>
 			<div className="relative mx-auto max-w-sm m-2">
 				<input
 					type="password"
@@ -25,14 +26,15 @@ export const RSVPComponent: React.FunctionComponent<RSVPComponentProps> = ({
 				/>
 				<label
 					htmlFor="hs-floating-input-password-value"
-					className="absolute top-0 start-0 p-4 h-full sm:text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500 peer-not-placeholder-shown:scale-90 peer-not-placeholder-shown:translate-x-0.5 peer-not-placeholder-shown:-translate-y-1.5 peer-not-placeholder-shown:text-gray-500"
+					className="absolute top-0 start-0 p-4 h-full sm:text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none peer-focus:scale-90 peer-focus:translate-x-0.5 peer-focus:-translate-y-1.5 peer-focus:text-gray-500 peer-not-placeholder-shown:scale-90 peer-not-placeholder-shown:translate-x-0.5 peer-not-placeholder-shown:-translate-y-1.5 peer-not-placeholder-shown:text-gray-500 text-gray-500"
 				>
 					Contraseña
 				</label>
 			</div>
-			<button className="header-button m-2" onClick={onButtonClick}>
+			<button className="header-button m-2" onClick={() => setShowComponent(true)}>
 				{buttonText}
 			</button>
+			{showComponent && <ConfirmComponent />}
 		</div>
 	)
 }

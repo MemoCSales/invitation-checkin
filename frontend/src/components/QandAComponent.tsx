@@ -4,14 +4,14 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
+import { SubtitleComponent } from "./utils/SubtitleComponent";
 
 export const QandAComponent = () => {
 	return (
 		<div className="component-container">
-			<div className="header-subtitle capitalize text-3xl text-black font-serif font-bold">
-				Preguntas Frecuentes
-			</div>
-			<hr className="divider"/>
+			<SubtitleComponent
+				subtitle="Preguntas Frecuentes"
+			/>
 			<div className="mx-auto w-full max-w-md sm:max-w-lg md:max-w-4xl">
 				<Accordion>
 					<AccordionSummary

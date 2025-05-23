@@ -1,4 +1,5 @@
 import React from "react";
+import { SubtitleComponent } from "./utils/SubtitleComponent";
 
 interface EventLocationsProps {
 	ceremony: string
@@ -11,8 +12,9 @@ export const EventLocations: React.FunctionComponent<EventLocationsProps> = ({
 }) => {
 	return (
 		<div className="component-container">
-			<div className="header-subtitle text-4xl text-black font-serif font-bold">Día y Lugar</div>
-			<hr className="divider"/>
+			<SubtitleComponent
+				subtitle="Día y Lugar"
+			/>
 			<div>
 				<div className="salon-icon" aria-label="Location Icon"></div>
 				<h3 className="text-2xl font-bold mb-2 mt-2">Salón Las Ostias</h3>

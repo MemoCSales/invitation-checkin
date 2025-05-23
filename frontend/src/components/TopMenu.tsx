@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from "react";
 
+interface TitleProps {
+	she: string
+	he: string
+}
+
+function Title({ she, he }: TitleProps) {
+	return (
+		<div className="text-white text-xl font-bold">
+			{she} & {he}
+		</div>
+	)
+}
+
 export const TopMenu: React.FunctionComponent = () => {
+	const she = "Daniela"
+	const he = "Guillermo"
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [atTop, setAtTop] = useState(true);
 
@@ -18,9 +34,10 @@ export const TopMenu: React.FunctionComponent = () => {
 	return (
 		<nav className={`nav-bar ${atTop ? 'shadow-none' : 'shadow-md'}`}>
 			<div className="nav-container">
-				<div className="text-white text-xl font-bold">
-					Daniela & Guillermo
-				</div>
+				<Title
+					she={she}
+					he={he}
+				/>
 				<button
 				className="text-white md:hidden"
 				onClick={() => setIsOpen(!isOpen)}
