@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { SubtitleComponent } from "./utils/SubtitleComponent";
-import { ConfirmComponent } from "./ConfirmComponent";
+// import { ConfirmComponent } from "./ConfirmComponent";
+import { useNavigate } from "react-router";
 
 interface RSVPComponentProps {
 	buttonText: string
@@ -10,7 +11,8 @@ export const RSVPComponent: React.FunctionComponent<RSVPComponentProps> = ({
 	buttonText
 }) => {
 
-	const [showComponent, setShowComponent] = useState(false)
+	// const [showComponent, setShowComponent] = useState(false)
+	const navigate = useNavigate();
 	return (
 		<div className="component-container" id="RSVP">
 			<SubtitleComponent
@@ -31,10 +33,9 @@ export const RSVPComponent: React.FunctionComponent<RSVPComponentProps> = ({
 					Contraseña
 				</label>
 			</div>
-			<button className="header-button m-2" onClick={() => setShowComponent(true)}>
+			<button className="header-button m-2" onClick={() => navigate("/confirm")}>
 				{buttonText}
 			</button>
-			{showComponent && <ConfirmComponent />}
 		</div>
 	)
 }

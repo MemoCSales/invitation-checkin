@@ -12,7 +12,7 @@ export const SubtitleComponent: React.FunctionComponent<SubtitleProps> = ({
 	return (
 		<>
 			<div 
-				className="header-subtitle text-4xl text-black font-serif font-bold">
+				className="header-subtitle text-4xl text-black font-serif font-bold capitalize">
 					{subtitle}
 			</div>
 			<p>{comment}</p>
