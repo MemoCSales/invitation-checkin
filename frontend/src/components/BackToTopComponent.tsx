@@ -22,7 +22,8 @@ function ScrollTop(props: Props) {
 
 		if (anchor) {
 			anchor.scrollIntoView({
-				block: 'center'
+				block: 'center',
+				behavior: "smooth"
 			});
 		}
 	};
