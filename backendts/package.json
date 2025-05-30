@@ -1,0 +1,23 @@
+{
+  "name": "backendts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/server.ts"
+  },
+  "keywords": [],
+  "author": "MemoCSales",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.27",
+    "nodemon": "^3.1.10",
+    "pino-pretty": "^13.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
