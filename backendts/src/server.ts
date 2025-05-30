@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import dotenv from "dotenv";
+import setupDatabase from "./database/schema.js";
 
 dotenv.config();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
@@ -15,6 +16,15 @@ const fastify = Fastify({
 		},
 	},
 });
+
+// Init database
+try {
+	setupDatabase();
+	console.log('Database initialized successfully');
+} catch (error) {
+	console.error('Failed to initialized database:', error);
+	process.exit(1);
+}
 
 // Register first route
 fastify.get('/',  (_request, reply) => {
