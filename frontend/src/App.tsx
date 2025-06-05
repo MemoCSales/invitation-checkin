@@ -9,7 +9,7 @@ const App = () => {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<LayoutComponent />} />
-				<Route path="/confirm" element={<ConfirmComponent />}/>
+				<Route path="/login" element={<ConfirmComponent />}/>
 			</Routes>
 		</BrowserRouter>
 	);
