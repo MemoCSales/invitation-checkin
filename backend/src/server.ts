@@ -1,18 +1,17 @@
 import Fastify from "fastify";
 import fastifyJwt from "@fastify/jwt";
 import fastifyCookie from "@fastify/cookie";
+import fastifyCors from "@fastify/cors";
 import { FastifyRequest, FastifyReply } from "fastify";
 import dotenv from "dotenv";
 import setupDatabase from "./database/schema.js";
+import seedDatabase from "../scripts/seed.js";
 import loginRoute from "./routes/auth.js"
 
 declare module 'fastify' {
 	interface FastifyInstance {
 		authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
 	}
-	// interface FastifyRequest {
-	// 	user: string;
-	// }
 }
 
 dotenv.config();
@@ -40,8 +39,8 @@ fastify.register(fastifyJwt, {
 	}
 });
 
-// Middleware
-fastify.decorate('authenticate', async function(request: FastifyRequest, reply: FastifyReply) {
+// Global middleware for authentication
+fastify.decorate('authenticate', async function (request: FastifyRequest, reply: FastifyReply) {
 	try {
 		await request.jwtVerify();
 	} catch (error) {
@@ -51,19 +50,25 @@ fastify.decorate('authenticate', async function(request: FastifyRequest, reply: 
 
 // Init database
 try {
-	setupDatabase();
-	console.log('Database initialized successfully');
+	await setupDatabase();
+	await seedDatabase();
+	console.log('Database initialized and seeded successfully');
 } catch (error) {
 	console.error('Failed to initialized database:', error);
 	process.exit(1);
 }
 
-// Register first route
-fastify.get('/',  (_request: FastifyRequest, reply: FastifyReply) => {
-	reply.send({
-		message: 'Hello Fastify is running!'
-	});
-});
+fastify.register(fastifyCors, {
+	origin: [
+		`${process.env.FRONT_URL}` // local frontend
+		// Production origin
+	],
+	methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	credentials: true, // Allow sending cookies or auth headers
+	maxAge: 86400
+})
+
 
 // Register routes here
 fastify.register(loginRoute);

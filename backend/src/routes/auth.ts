@@ -5,9 +5,9 @@ import db from "../database/connection.js";
 
 export default async function (app: FastifyInstance) {
 	app.post('/login', async (request, reply) => {
-		const { password } = request.body as { password: string };
+		const { username, password } = request.body as { username: string, password: string };
 		const user = await db('guest')
-			.where({ password })
+			.where({ username })
 			.first();
 		if (!user || !(await bcrypt.compare(password, user.password))) {
 			return reply.code(401).send({ error: 'Invalid Credentials' });

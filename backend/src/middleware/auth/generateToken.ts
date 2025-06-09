@@ -5,7 +5,7 @@ export async function generateToken(reply: FastifyReply, payload: object) {
 	reply.setCookie('accessToken', accessToken, {
 		path: '/',
 		httpOnly: true,
-		// secure: process.env.NODE_ENV === 'production',
+		secure: process.env.NODE_ENV === 'production',
 		sameSite: 'strict',
 		maxAge: 7 * 24 * 60 * 60
 	});

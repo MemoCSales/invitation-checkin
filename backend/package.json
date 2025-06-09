@@ -5,13 +5,15 @@
   "main": "src/server.ts",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec \"node --loader ts-node/esm src/server.ts\""
+    "dev": "nodemon --exec \"node --loader ts-node/esm src/server.ts\"",
+    "seed": "ts-node --esm src/database/seed.ts"
   },
   "keywords": [],
   "author": "MemoCSales",
   "license": "ISC",
   "dependencies": {
     "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^11.0.1",
     "@fastify/jwt": "^9.1.0",
     "bcrypt": "^6.0.0",
     "better-sqlite3": "^11.10.0",
