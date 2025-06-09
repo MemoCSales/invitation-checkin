@@ -3,7 +3,7 @@
 ## General
 - [ ] Actualizar el texto de la app
 - [ ] Elementos del EventHeader aparezcan difuminados
-- [ ] Crear un SPA (Single-Page Application)
+- [ x ] Crear un SPA (Single-Page Application)
 
 ## Menu de Navegacion
 - [ ] Arreglar el menu para dispositivos moviles
@@ -23,6 +23,8 @@
 - [ ] Arreglar estilos de tailwind
 
 ## RSVP
+- [ ] Agregar un campo para username
+- [ ] Agregar validacion del formulario para asegurarte que los campos fueron rellenados correctamente.
 - [ ] Agregar un boton que altere el estado del input entre password y text
 - [ ] Que el boton 'Ingresar' se active cuando haya una contrasena valida en el input
 - [ ] Despues de ingresar contrasena y dar click a ingresar. Te renderice otra pagina

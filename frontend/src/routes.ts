@@ -6,7 +6,7 @@ import {
 
 export default [
 	index("./App.tsx"),
-	route("/confirm", "./components/ConfirmComponent.tsx"),
+	route("/login", "./components/ConfirmComponent.tsx"),
 	// pattern ^           ^ module file
 ] satisfies RouteConfig;
   
