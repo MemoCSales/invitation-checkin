@@ -34,7 +34,7 @@ fastify.register(fastifyCookie);
 fastify.register(fastifyJwt, {
 	secret: process.env.JWT_SECRET || 'supersecreto',
 	cookie: {
-		cookieName: 'token',
+		cookieName: 'refreshToken',
 		signed: false
 	}
 });
