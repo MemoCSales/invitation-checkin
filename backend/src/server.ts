@@ -2,17 +2,11 @@ import Fastify from "fastify";
 import fastifyJwt from "@fastify/jwt";
 import fastifyCookie from "@fastify/cookie";
 import fastifyCors from "@fastify/cors";
-import { FastifyRequest, FastifyReply } from "fastify";
 import dotenv from "dotenv";
 import setupDatabase from "./database/schema.js";
 import seedDatabase from "../scripts/seed.js";
 import loginRoute from "./routes/auth.js"
-
-declare module 'fastify' {
-	interface FastifyInstance {
-		authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
-	}
-}
+import { verifyAccessToken } from "./middleware/auth/verifyAccessToken.js";
 
 dotenv.config();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
@@ -39,14 +33,6 @@ fastify.register(fastifyJwt, {
 	}
 });
 
-// Global middleware for authentication
-fastify.decorate('authenticate', async function (request: FastifyRequest, reply: FastifyReply) {
-	try {
-		await request.jwtVerify();
-	} catch (error) {
-		reply.code(401).send({ error: 'No authorized' });
-	}
-});
 
 // Init database
 try {
@@ -69,6 +55,8 @@ fastify.register(fastifyCors, {
 	maxAge: 86400
 })
 
+// Global middleware for authentication
+fastify.decorate('authenticate', verifyAccessToken);
 
 // Register routes here
 fastify.register(loginRoute);

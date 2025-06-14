@@ -18,5 +18,5 @@ The `login-controller` does the following:
 - Handle HTTP-specific errors
 
 ## Implementing Access Token and Refresh Token Authentication
-- **Access tokens:** Short-lived (minutes to hours), used for API authorization
-- **Refresh tokens:** Long-lived (days to weeks), used only to obtain new access tokens
+- **Access tokens:** Short-lived (minutes to hours), used for API authorization. Stored in memory only
+- **Refresh tokens:** Long-lived (days to weeks), used only to obtain new access tokens. Stored in an HTTP-only cookie that JavaScript cannot access.

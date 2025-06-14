@@ -2,14 +2,14 @@
 
 
 ## To-do
-- [ ]  Create a Token Refresh Endpoint
+- [ X ]  Create a Token Refresh Endpoint
 	Add a new /refresh endpoint that:
 	Verifies the refresh token from the cookie
 	Checks if the refresh token is valid and not revoked
 	Generates a new access token
 	Optionally rotates the refresh token for enhanced security
 
-- [ ] Update Authentication Middleware
+- [ X ] Update Authentication Middleware
 	Modify your `authenticate` middleware to:
 
 	Look for the access token in the Authorization header

@@ -1,12 +1,17 @@
 import { FastifyReply } from "fastify";
+import { JWTPayload } from "../../types.js";
 
-export async function generateToken(reply: FastifyReply, payload: object) {
+export async function generateToken(reply: FastifyReply, payload: {
+	id: string | number;
+	firstName: string;
+}) {
 	const accessToken = await reply.jwtSign(
-		{ ...payload, tokenType: 'access' },
+		// ensure TypeScript recognizes these objects match your JWT payload interface
+		{ ...payload, tokenType: 'access' } as JWTPayload,
 		{ expiresIn: '30m' }
 	);
 	const refreshToken = await reply.jwtSign(
-		{ ...payload, tokenType: 'refresh' },
+		{ ...payload, tokenType: 'refresh' } as JWTPayload,
 		{ expiresIn: '3d' }
 	);
 	reply.setCookie('refreshToken', refreshToken, {
